@@ -27,6 +27,8 @@ h4 {
     height: 1px;
     display: block;
     background: #ff9a7e;
+    -webkit-transition: 300ms;
+    -o-transition: 300ms;
     transition: 300ms;
 }
 
@@ -94,20 +96,25 @@ header {
     background-image: url('../img/element.png');
     background-repeat: no-repeat;
     background-position: top right;
-    box-shadow: 0 16px 48px rgba(32, 41, 50, 0.12);
+    -webkit-box-shadow: 0 16px 48px rgba(32, 41, 50, 0.12);
+            box-shadow: 0 16px 48px rgba(32, 41, 50, 0.12);
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
     cursor: pointer;
-    height: 300px;
     overflow: hidden;
+    height: 100%;
 }
 
 
+
 .single-what:hover {
-    box-shadow: 0 16px 48px rgba(32, 41, 50, 0.3);
+    -webkit-box-shadow: 0 16px 48px rgba(32, 41, 50, 0.3);
+            box-shadow: 0 16px 48px rgba(32, 41, 50, 0.3);
 }
 
 .what-title {
@@ -116,9 +123,15 @@ header {
     background: #52D1DC;
     width: 3rem;
     height: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .what-title i {
@@ -126,9 +139,15 @@ header {
 }
 
 .title-single {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
 
 }
 
@@ -165,7 +184,10 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
     -webkit-transition: transform 0.3s ease-in-out;
     -moz-transition: transform 0.3s ease-in-out;
     -ms-transition: transform 0.3s ease-in-out;
@@ -189,7 +211,8 @@ header {
 
 .card {
     overflow: hidden;
-    box-shadow: 0 16px 48px rgba(32, 41, 50, 0.12);
+    -webkit-box-shadow: 0 16px 48px rgba(32, 41, 50, 0.12);
+            box-shadow: 0 16px 48px rgba(32, 41, 50, 0.12);
 }
 
 .card-2 .image-card {
@@ -203,12 +226,18 @@ header {
 }
 
 .btn-gradient {
+    background-image: -webkit-gradient(linear, left top, right top, from(#dbd3d8), color-stop(51%, #e7c4d0), to(#ff9a7e));
+    background-image: -webkit-linear-gradient(left, #dbd3d8 0%, #e7c4d0 51%, #ff9a7e 100%);
+    background-image: -o-linear-gradient(left, #dbd3d8 0%, #e7c4d0 51%, #ff9a7e 100%);
     background-image: linear-gradient(to right, #dbd3d8 0%, #e7c4d0 51%, #ff9a7e 100%);
     border-color: transparent;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
     background-size: 200% auto;
     color: white;
-    box-shadow: 0 0 20px #eee;
+    -webkit-box-shadow: 0 0 20px #eee;
+            box-shadow: 0 0 20px #eee;
     border: 0px solid transparent;
 }
 
@@ -245,6 +274,8 @@ footer a:hover {
     height: 1px;
     display: block;
     background: #ff9a7e;
+    -webkit-transition: 300ms;
+    -o-transition: 300ms;
     transition: 300ms;
 
 }
@@ -255,9 +286,16 @@ footer a:hover {
 
 
 .our-team .card-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .socials i {
@@ -279,5 +317,28 @@ footer a:hover {
 @media (max-width: 1430px) {
     .title-single h4 {
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 1170px) {
+    .title-single h4 {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .nav-item:after {
+        display: none;
+    }
+
+    .single-what {
+        margin-bottom: 15px;
+    }
+
+
+
+    .our-team .col-lg-4 {
+        margin-bottom: 15px;
     }
 }
